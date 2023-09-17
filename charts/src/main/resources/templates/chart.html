@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Displaying chart</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" th:inline="javascript">
+		
+		var chartmodel = [[${values}]];
+		
+		google.charts.load('current', {'packages':['corechart']});
+	       
+	    google.charts.setOnLoadCallback(drawChart); 
+	    
+	    function drawChart(){
+	    	var data = new google.visualization.DataTable();
+	    	data.addColumn('string','Name');
+	    	data.addColumn('number','Value');
+	    	
+	    	for(i = 0; i < chartmodel.length; i++) {
+            	data.addRow([ chartmodel[i].key, Number(chartmodel[i].value) ]);
+        	}
+	    	
+	        var options = {
+	            'title' : [[${title}]],
+	            is3D : true,
+	            pieSliceText: 'label',
+	            tooltip :  {showColorCode: true},
+	            'width' : 1000,
+	            'height' : 500
+	        };
+	        
+	        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+	    }
+	
+	</script>
+</head>
+<body>
+	<div style="width: 1500px;" align="center">
+        <div id="chart_div"></div>
+    </div>
+</body>
+</html>
