@@ -1,0 +1,12 @@
+# Steps to Dockerize Spring boot application. 
+
+1. Create a Dockerfile in your project. ( Please take a reference of file added in this folder )
+2. Downlaod and Install Docker Desktop apllication in local.
+3. Sign In with your credential.
+4. Open command prompt and navigate to project location or In IDE, Right click the application and click to open in terminal. 
+5. Type the following commands in terminal 
+  5.1 - mvn clean package  Note: once successfully build. 
+  5.2 - docker build --tag=[application name]:latest .
+  5.3 - docker run -p8080:8080 [application name]:latest 
+
+Your application will start running in provided endpoint. In this case, It will run in http://localhost:8080/
