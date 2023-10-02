@@ -26,7 +26,7 @@ public class AmazonsesService {
 	
 	private AWSCredentialsProvider getAwsCredentialProvider() {
 	    AWSCredentials awsCredentials =
-	        new BasicAWSCredentials("AKIAX3GHFMNVOZN3VOH4", "yXks20H9vb3ArVDTgPQskziliaf1NcXBV+ZYmoKD");
+	        new BasicAWSCredentials("aws-access-key", "aws-secret-key");
 	    return new AWSStaticCredentialsProvider(awsCredentials);
 	  }
 	
