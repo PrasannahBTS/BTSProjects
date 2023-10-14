@@ -1,0 +1,4 @@
+com\example\model\AmazonsqsModel.class
+com\example\service\AmazonsqsService.class
+com\example\sqs\SqsApplication.class
+com\example\controller\AmazonsqsController.class
